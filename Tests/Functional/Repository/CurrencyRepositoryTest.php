@@ -12,14 +12,14 @@
  * @version ##version_placeholder##
  */
 
-namespace Elcodi\CurrencyBundle\Tests\Functional\Factory;
+namespace Elcodi\CurrencyBundle\Tests\Functional\Repository;
 
 use Elcodi\CoreBundle\Tests\WebTestCase;
 
 /**
- * Class CurrencyFactoryTest
+ * Class CurrencyRepositoryTest
  */
-class CurrencyFactoryTest extends WebTestCase
+class CurrencyRepositoryTest extends WebTestCase
 {
     /**
      * Returns the callable name of the service
@@ -29,30 +29,30 @@ class CurrencyFactoryTest extends WebTestCase
     public function getServiceCallableName()
     {
         return [
-            'elcodi.core.currency.factory.currency',
-            'elcodi.factory.currency',
+            'elcodi.core.currency.repository.currency',
+            'elcodi.repository.currency',
         ];
     }
 
     /**
-     * Test currency factory provider
+     * Test currency repository provider
      */
     public function testFactoryProvider()
     {
         $this->assertInstanceOf(
-            $this->container->getParameter('elcodi.core.currency.entity.currency.class'),
-            $this->container->get('elcodi.core.currency.entity.currency.instance')
+            $this->container->getParameter('elcodi.core.currency.repository.currency.class'),
+            $this->container->get('elcodi.core.currency.repository.currency')
         );
     }
 
     /**
-     * Test currency factory provider alias
+     * Test currency repository provider alias
      */
     public function testFactoryProviderAlias()
     {
         $this->assertInstanceOf(
-            $this->container->getParameter('elcodi.core.currency.entity.currency.class'),
-            $this->container->get('elcodi.entity.currency.instance')
+            $this->container->getParameter('elcodi.core.currency.repository.currency.class'),
+            $this->container->get('elcodi.repository.currency')
         );
     }
 }
