@@ -12,14 +12,14 @@
  * @version ##version_placeholder##
  */
 
-namespace Elcodi\CurrencyBundle\Tests\Functional\Form\Type;
+namespace Elcodi\CurrencyBundle\Tests\Functional\Factory;
 
 use Elcodi\CoreBundle\Tests\WebTestCase;
 
 /**
- * Tests CurrencyType class
+ * Class CurrencyFactoryTest
  */
-class CurrencyTypeTest extends WebTestCase
+class CurrencyFactoryTest extends WebTestCase
 {
     /**
      * Returns the callable name of the service
@@ -28,6 +28,17 @@ class CurrencyTypeTest extends WebTestCase
      */
     public function getServiceCallableName()
     {
-        return 'elcodi.core.currency.form_type.currency';
+        return 'elcodi.core.currency.factory.currency';
+    }
+
+    /**
+     * Test currency factory provider
+     */
+    public function testFactoryProvider()
+    {
+        $this->assertInstanceOf(
+            $this->container->getParameter('elcodi.core.currency.entity.currency.class'),
+            $this->container->get('elcodi.core.currency.entity.currency.instance')
+        );
     }
 }
