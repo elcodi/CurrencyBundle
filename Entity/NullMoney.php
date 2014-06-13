@@ -12,21 +12,27 @@
  * @version ##version_placeholder##
  */
 
-namespace Elcodi\CurrencyBundle\Entity\Interfaces;
+namespace Elcodi\CurrencyBundle\Entity;
+
+use Elcodi\CurrencyBundle\Entity\Interfaces\CurrencyInterface;
+use Elcodi\CurrencyBundle\Entity\Interfaces\MoneyInterface;
 
 /**
- * MoneyInterface
+ * Class NullMoney
  */
-interface MoneyInterface
+class NullMoney implements MoneyInterface
 {
     /**
      * Adds a Money and returns the result as a new Money
      *
      * @param MoneyInterface $other
      *
-     * @return MoneyInterface
+     * @return MoneyInterface self Object
      */
-    public function add(MoneyInterface $other);
+    public function add(MoneyInterface $other)
+    {
+        return $this;
+    }
 
     /**
      * Tells if a Money value is less than current Money object
@@ -35,16 +41,22 @@ interface MoneyInterface
      *
      * @return bool
      */
-    public function isLessThan(MoneyInterface $other);
+    public function isLessThan(MoneyInterface $other)
+    {
+        return null;
+    }
 
     /**
      * Multiplies current Money amount by a factor returns the result as a new Money
      *
      * @param float $factor
      *
-     * @return MoneyInterface
+     * @return MoneyInterface self Object
      */
-    public function multiply($factor);
+    public function multiply($factor)
+    {
+        return $this;
+    }
 
     /**
      * Tells if a Money has the same value as current Money object
@@ -53,7 +65,10 @@ interface MoneyInterface
      *
      * @return bool
      */
-    public function equals(MoneyInterface $other);
+    public function equals(MoneyInterface $other)
+    {
+        return null;
+    }
 
     /**
      * Compares current Money object to another
@@ -66,18 +81,24 @@ interface MoneyInterface
      *
      * @param MoneyInterface $other
      *
-     * @return MoneyInterface
+     * @return MoneyInterface self Object
      */
-    public function compareTo(MoneyInterface $other);
+    public function compareTo(MoneyInterface $other)
+    {
+        return $this;
+    }
 
     /**
      * Subtracts a Money and returns the result as a new Money
      *
      * @param MoneyInterface $other
      *
-     * @return MoneyInterface
+     * @return MoneyInterface self Object
      */
-    public function subtract(MoneyInterface $other);
+    public function subtract(MoneyInterface $other)
+    {
+        return $this;
+    }
 
     /**
      * Tells if a Money value is greater than current Money object
@@ -86,20 +107,28 @@ interface MoneyInterface
      *
      * @return bool
      */
-    public function isGreaterThan(MoneyInterface $other);
+    public function isGreaterThan(MoneyInterface $other)
+    {
+        return null;
+    }
 
     /**
      * Gets the Money amount
      *
      * @return int
      */
-    public function getAmount();
+    public function getAmount()
+    {
+        return 0;
+    }
 
     /**
      * Gets the Money Currency
      *
      * @return CurrencyInterface
      */
-    public function getCurrency();
-
+    public function getCurrency()
+    {
+        return null;
+    }
 }

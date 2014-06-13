@@ -12,13 +12,14 @@
  * @version ##version_placeholder##
  */
 
-namespace Elcodi\CurrencyBundle\Repository;
+namespace Elcodi\CurrencyBundle\Exception;
 
-use Doctrine\ORM\EntityRepository;
+use Exception;
 
 /**
- * CurrencyRepository
+ * Class CurrencyNotConvertibleException
  */
-class CurrencyRepository extends EntityRepository
+class CurrencyNotConvertibleException extends Exception
 {
+
 }
