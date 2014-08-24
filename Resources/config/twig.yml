@@ -1,0 +1,13 @@
+services:
+
+    #
+    # Twig extensions
+    #
+    elcodi.core.currency.twig_extension.print_money:
+        class: %elcodi.core.currency.twig_extension.print_money.class%
+        arguments:
+            currency_manager: @elcodi.currency_converter
+            currency_wrapper: @elcodi.currency_wrapper
+            locale_provider_adapter: @elcodi.core.currency.adapter.locale_provider_adapter
+        tags:
+            - { name: twig.extension }
