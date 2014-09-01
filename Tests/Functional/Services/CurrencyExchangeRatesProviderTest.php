@@ -14,15 +14,25 @@
  * @author Aldo Chiecchia <zimage@tiscali.it>
  */
 
-namespace Elcodi\Bundle\CurrencyBundle\Tests\Functional\Command;
+namespace Elcodi\Bundle\CurrencyBundle\Tests\Functional\Services;
 
 use Elcodi\Bundle\TestCommonBundle\Functional\WebTestCase;
 
 /**
- * Class LoadExchangeRatesCommandTest
+ * Class CurrencyExchangeRatesProviderTest
  */
-class LoadExchangeRatesCommandTest extends WebTestCase
+class CurrencyExchangeRatesProviderTest extends WebTestCase
 {
+    /**
+     * Schema must be loaded in all test cases
+     *
+     * @return array Load schema
+     */
+    protected function loadSchema()
+    {
+        return false;
+    }
+
     /**
      * Returns the callable name of the service
      *
@@ -31,7 +41,8 @@ class LoadExchangeRatesCommandTest extends WebTestCase
     public function getServiceCallableName()
     {
         return [
-            'elcodi.core.currency.command.load_exchange_rates',
+            'elcodi.core.currency.service.currency_exchange_rates_provider',
+            'elcodi.currency_exchange_rates_provider',
         ];
     }
 }

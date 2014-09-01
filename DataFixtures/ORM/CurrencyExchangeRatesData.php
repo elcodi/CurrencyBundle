@@ -25,9 +25,9 @@ use Elcodi\Component\Currency\Entity\Interfaces\CurrencyInterface;
 use Elcodi\Component\Currency\Factory\CurrencyExchangeRateFactory;
 
 /**
- * Class RatesData
+ * Class CurrencyExchangeRatesData
  */
-class RatesData extends AbstractFixture implements DependentFixtureInterface
+class CurrencyExchangeRatesData extends AbstractFixture implements DependentFixtureInterface
 {
     /**
      * Load data fixtures with the passed EntityManager
